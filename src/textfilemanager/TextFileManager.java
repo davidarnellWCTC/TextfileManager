@@ -1,11 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package textfilemanager;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,10 +18,17 @@ public class TextFileManager {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        File data = new File(File.separatorChar + "temp" + File.separatorChar
-                + "test.txt");
+        //File data = new File(File.separatorChar + "temp" + File.separatorChar + "test2.txt");
         
-        TextBasedFile file1 = new TextBasedFile(data);
+        //TextBasedFile file1 = new TextBasedFile(data);
+        
+        TextFileHandler tfh = new PlainTextFileHandler();
+        
+        try {
+            File file = tfh.createFile("E:/temp/", "test3");
+        } catch (IOException ex) {
+            Logger.getLogger(TextFileManager.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
     
